@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 8257969692436592577}
   - component: {fileID: 2120561653859997}
   - component: {fileID: -8457937337263327989}
+  - component: {fileID: 6405423259484802838}
+  - component: {fileID: 7490885207489291342}
   m_Layer: 7
-  m_Name: Circle
+  m_Name: Balloon
   m_TagString: Balloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2769704435659452373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.07, y: -8.42, z: 0}
+  m_LocalPosition: {x: -2.81, y: 4.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155,3 +157,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b439022c97ef92540a796ca6e20cb30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6405423259484802838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769704435659452373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765a2a5aa6a8a4d4b9de7a9842084446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatForce: 10
+  maxY: 5
+  minY: 1
+--- !u!50 &7490885207489291342
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769704435659452373}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

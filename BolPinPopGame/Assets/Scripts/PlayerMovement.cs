@@ -41,36 +41,34 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimationState();
     }
 
-    private void UpdateAnimationState()
+private void UpdateAnimationState()
+{
+    MovementState state = MovementState.idle;
+
+    if (dirX != 0f)
     {
-        MovementState state;
-
-        if (dirX > 0f && !m_FacingRight)
+        state = MovementState.running;
+        if (dirX > 0 && !m_FacingRight)
         {
-            state = MovementState.running;
             Flip();
         }
-        else if (dirX < 0f && m_FacingRight)
+        else if (dirX < 0 && m_FacingRight)
         {
-            state = MovementState.running;
             Flip();
         }
-        else 
-        {
-            state = MovementState.idle;
-        }
-
-        if (rb.velocity.y > .1f)
-        {
-            state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -.1f)
-        {
-            state = MovementState.falling;
-        }
-
-        anim.SetInteger("state", (int)state);
     }
+
+    if (rb.velocity.y > 0.1f)
+    {
+        state = MovementState.jumping;
+    }
+    else if (rb.velocity.y < -0.1f)
+    {
+        state = MovementState.falling;
+    }
+
+    anim.SetInteger("state", (int)state);
+}
 
     private bool IsGrounded()
     {

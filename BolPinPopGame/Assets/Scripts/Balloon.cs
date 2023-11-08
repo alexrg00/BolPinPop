@@ -20,7 +20,7 @@ public class Balloon : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             anim.Play("Pop");
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 0.1f);
 
             if (scoreManager != null)
             {

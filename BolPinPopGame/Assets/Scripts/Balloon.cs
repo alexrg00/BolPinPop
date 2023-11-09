@@ -23,7 +23,7 @@ public class Balloon : MonoBehaviour
         {
             popSoundEffect.Play();
             anim.Play("Pop");
-            Destroy(gameObject, 0.1f);
+            Destroy(gameObject, 0.05f);
 
             if (scoreManager != null)
             {

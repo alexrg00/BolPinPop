@@ -8,6 +8,8 @@ public class Balloon : MonoBehaviour
     private Animator anim; // Rename the variable to "animator"
     private ScoreManager scoreManager;
 
+    [SerializeField] private AudioSource popSoundEffect;
+
     void Start()
     {
         anim = GetComponent<Animator>(); // Corrected variable name here
@@ -19,6 +21,7 @@ public class Balloon : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
+            popSoundEffect.Play();
             anim.Play("Pop");
             Destroy(gameObject, 0.1f);
 

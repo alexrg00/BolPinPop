@@ -9,12 +9,14 @@ public class PlayerLife : MonoBehaviour
     private Animator anim;
     [SerializeField] private AudioSource deathSoundEffect;
     private ScoreManager scoreManager; // Reference to the ScoreManager
+    private FruitCollector fruitCollector; // Reference to the FruitCollector
 
     void Start()
 {
     rb = GetComponent<Rigidbody2D>();
     anim = GetComponent<Animator>();  // Fix here
     scoreManager = FindObjectOfType<ScoreManager>(); // Find the ScoreManager in the scene
+    fruitCollector = FindObjectOfType<FruitCollector>();
 }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,6 +38,12 @@ public class PlayerLife : MonoBehaviour
         {
             scoreManager.ResetScoreOnDeath();
         }
+        
+        if (fruitCollector != null)
+        {
+            fruitCollector.ResetBananaCount();
+        }
+
 
         // You can add other death-related logic here
 

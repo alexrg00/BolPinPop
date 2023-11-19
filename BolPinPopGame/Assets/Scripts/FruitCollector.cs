@@ -12,6 +12,9 @@ public class FruitCollector : MonoBehaviour
 
     private void Start()
     {
+        // Load the banana count from PlayerPrefs
+        bananaCount = PlayerPrefs.GetInt("BananaCount", 0);
+
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         UpdateBananaCountText();
     }
@@ -40,5 +43,14 @@ public class FruitCollector : MonoBehaviour
     {
         // Update the UI Text element to display the banana count
         BananaTxt.text = "Bananas: " + bananaCount;
+
+        // Save the banana count to PlayerPrefs
+        PlayerPrefs.SetInt("BananaCount", bananaCount);
+        PlayerPrefs.Save();
+    }
+    public void ResetBananaCount()
+    {
+    bananaCount = 0;
+    UpdateBananaCountText();
     }
 }

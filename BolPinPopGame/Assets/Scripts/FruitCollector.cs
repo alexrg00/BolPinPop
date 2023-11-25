@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FruitCollector : MonoBehaviour
 {
     private ScoreManager scoreManager;
-    private int bananaCount = 0; // New variable to track the number of bananas collected
+    private int bananaCount = 0; 
     [SerializeField] private Text BananaTxt;
     [SerializeField] private AudioSource collectionSoundEffect;
 

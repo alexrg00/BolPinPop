@@ -14,8 +14,8 @@ public class PlayerLife : MonoBehaviour
     void Start()
 {
     rb = GetComponent<Rigidbody2D>();
-    anim = GetComponent<Animator>();  // Fix here
-    scoreManager = FindObjectOfType<ScoreManager>(); // Find the ScoreManager in the scene
+    anim = GetComponent<Animator>();  
+    scoreManager = FindObjectOfType<ScoreManager>(); 
     fruitCollector = FindObjectOfType<FruitCollector>();
 }
 
@@ -45,9 +45,9 @@ public class PlayerLife : MonoBehaviour
         }
 
 
-        // You can add other death-related logic here
+        
 
-        // Restart the level after a delay (example: 2 seconds)
+        
         Invoke("RestartLevel", 2f);
     }
 

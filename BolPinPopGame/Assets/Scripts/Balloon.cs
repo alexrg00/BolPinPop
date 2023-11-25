@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Balloon : MonoBehaviour
 {
-    private Animator anim; // Rename the variable to "animator"
+    private Animator anim; 
     private ScoreManager scoreManager;
 
     [SerializeField] private AudioSource popSoundEffect;
 
     void Start()
     {
-        anim = GetComponent<Animator>(); // Corrected variable name here
+        anim = GetComponent<Animator>();
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
     }
 

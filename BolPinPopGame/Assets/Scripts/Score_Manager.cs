@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        // Check for the cheat code (e.g., Q key)
+       
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ActivateNextLevelButton();
@@ -45,7 +45,7 @@ public class ScoreManager : MonoBehaviour
 
     private void ActivateNextLevelButton()
     {
-        // Activate the button GameObject
+
         if (nextLevelButton != null)
         {
             nextLevelButton.SetActive(true);
@@ -54,9 +54,6 @@ public class ScoreManager : MonoBehaviour
 
     public void OnNextLevelButtonClick()
     {
-        Debug.Log("Next Level Button Clicked");
-
-        // Call any other logic related to the button click
         SwitchToNextLevel();
     }
 
